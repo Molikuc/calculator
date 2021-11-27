@@ -7,7 +7,7 @@ html {
 #container {
   border: 5px solid black;
   height: 45vh;
-  width: 30vh;
+  width: 35vh;
   margin: auto;
   display: grid;
   grid-template-columns: repeat(4, 25%);
@@ -48,6 +48,14 @@ html {
   background-color: #4797b8;
 }
 
+.dark:active {
+  background-color: #7eabbe;
+}
+
 .light {
   background-color: #e98047;
+}
+
+.light:active {
+  background-color: #e69b73;
 }
