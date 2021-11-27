@@ -1,3 +1,7 @@
+const number = document.querySelectorAll('#number');
+const result = document.getElementById('display');
+let displayValue = "0";
+
 function add(a,b){
     return a+b;
 }
@@ -33,3 +37,27 @@ function operate(a,b,op){
     }
 }
 
+
+
+function updateDisplay(){
+    const display = result;
+    display.innerText = displayValue;
+}
+
+updateDisplay();
+
+number.forEach((button) => {
+    button.addEventListener('click', () => {
+        const value = button.value;
+        inputOperand(value);
+        updateDisplay();
+    });
+});
+
+function inputOperand(operand){
+    if(displayValue === "0" || displayValue === 0){
+        displayValue = operand;
+    } else {
+        displayValue += operand;
+    }
+}

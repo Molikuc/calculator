@@ -15,7 +15,7 @@ html {
   background-color: #41484d;
 }
 
-#number {
+button {
   border: 1px solid black;
   display: flex;
   justify-content: center;
@@ -32,7 +32,7 @@ html {
   align-items: center;
   background-color: #8e9ca4;
   font-size: 2em;
-  padding: 10px;
+  padding-right: 10px;
 }
 
 .clear {
