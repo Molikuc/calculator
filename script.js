@@ -2,6 +2,8 @@ const number = document.querySelectorAll('#number');
 const result = document.getElementById('display');
 let displayValue = "0";
 
+
+/* different function for different operator */
 function add(a,b){
     return a+b;
 }
@@ -22,6 +24,7 @@ function divide(a,b){
     }
 }
 
+/* function for putting everything together */
 function operate(a,b,op){
     if(op === "+"){
         return add(a,b);
@@ -38,7 +41,6 @@ function operate(a,b,op){
 }
 
 
-
 function updateDisplay(){
     const display = result;
     display.innerText = displayValue;
@@ -46,6 +48,7 @@ function updateDisplay(){
 
 updateDisplay();
 
+/* Goes to every button on click and get the value */
 number.forEach((button) => {
     button.addEventListener('click', () => {
         const value = button.value;
