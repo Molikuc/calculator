@@ -3,12 +3,19 @@ html {
   margin: 0;
   padding: 0;
 }
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
 #container {
   border: 5px solid black;
+}
+
+#button {
   height: 45vh;
   width: 35vh;
-  margin: auto;
   display: grid;
   grid-template-columns: repeat(4, 25%);
   grid-template-rows: minimax(100px, auto) repeat(5, 80px);
@@ -16,16 +23,16 @@ html {
 }
 
 button {
-  border: 1px solid black;
   display: flex;
   justify-content: center;
   align-items: center;
   border-radius: 5px;
   font-size: 2em;
+  border: 1px solid black;
 }
 
 #display {
-  border: 1px solid black;
+  border-bottom: 5px solid black;
   grid-column: 1 / -1;
   display: flex;
   justify-content: flex-end;
@@ -33,10 +40,11 @@ button {
   background-color: #8e9ca4;
   font-size: 5em;
   padding-right: 10px;
+  height: 10vh;
+  margin: auto;
 }
 
 .clear {
-  border: 1px solid black;
   width: 100%;
 }
 

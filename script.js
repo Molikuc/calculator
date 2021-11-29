@@ -4,7 +4,7 @@ const operator = document.querySelectorAll('#operator');
 const equal = document.getElementById("equal");
 const clear = document.querySelector("#clear");
 const percent = document.querySelector('#percent');
-const sing = document.querySelector("#sign");
+const backspace = document.querySelector("#backspace");
 let displayValue = "0";
 let ope;
 let firstOperand = null;
@@ -95,8 +95,8 @@ percent.onclick = () =>{
     updateDisplay();
 };
 
-sign.onclick = () =>{
-    inputSign(displayValue);
+backspace.onclick = () =>{
+    backDelete();
     updateDisplay();
 }
 
@@ -195,10 +195,14 @@ function inputPercent(num){
     displayValue = (num/100);
 }
 
-function inputSign(num){
-    displayValue = (num * -1);
-}
-
 function roundAccurately(num, places) {
     return parseFloat(Math.round(num + 'e' + places) + 'e-' + places);
 }
+
+function backDelete(){
+    displayValue = displayValue.toString().slice(0, -1);
+    if(displayValue === ""){
+        displayValue = "0";
+    }
+    console.log(displayValue);
+};
