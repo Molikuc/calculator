@@ -100,6 +100,12 @@ sign.onclick = () =>{
     updateDisplay();
 }
 
+window.addEventListener('keydown', function(e) {
+    const key = document.querySelector(`button[data-key='${e.keyCode}']`);
+    console.log(key);
+    key.click();
+});
+
 /* Get the operand and set the display on screen */
 function inputOperand(operand){
     if(firstOperator === null){
