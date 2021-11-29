@@ -3,7 +3,6 @@ const displayResult = document.getElementById('display');
 const operator = document.querySelectorAll('#operator');
 const equal = document.getElementById("equal");
 const clear = document.querySelector("#clear");
-const percent = document.querySelector('#percent');
 const backspace = document.querySelector("#backspace");
 let displayValue = "0";
 let ope;
@@ -90,11 +89,6 @@ clear.onclick = () => {
     updateDisplay()
 };
 
-percent.onclick = () =>{
-    inputPercent(displayValue);
-    updateDisplay();
-};
-
 backspace.onclick = () =>{
     backDelete();
     updateDisplay();
@@ -102,7 +96,6 @@ backspace.onclick = () =>{
 
 window.addEventListener('keydown', function(e) {
     const key = document.querySelector(`button[data-key='${e.keyCode}']`);
-    console.log(key);
     key.click();
 });
 
@@ -131,14 +124,14 @@ function inputOperator(operator){
         secondOperator = operator;
         secondOperand = displayValue;
         result = operate(Number(firstOperand),Number(secondOperand),firstOperator);
-        displayValue = roundAccurately(result, 15).toString();
+        displayValue = roundAccurately(result, 30).toString();
         firstOperand = displayValue;
         result = null;
     }else if(firstOperator != null && secondOperator != null){
         secondOperand = displayValue;
         result = operate(Number(firstOperand), Number(secondOperand), secondOperator);
         secondOperator = operator;
-        displayValue = roundAccurately(result, 15).toString();
+        displayValue = roundAccurately(result, 30).toString();
         firstOperand = displayValue;
         result = null;
     }
@@ -160,7 +153,7 @@ function equals(){
         if(result === "STAHP"){
             displayValue = "STAHP";
         } else{
-            displayValue = roundAccurately(result, 15).toString();
+            displayValue = roundAccurately(result, 30).toString();
             firstOperand = displayValue;
             firstOperator = null;
             secondOperand = null;
@@ -173,7 +166,7 @@ function equals(){
         if(result === "STAHP"){
             displayValue = "STAHP";
         } else{
-            displayValue = roundAccurately(result, 15).toString();
+            displayValue = roundAccurately(result, 30).toString();
             firstOperand = displayValue;
             firstOperator = null;
             secondOperand = null;
@@ -189,10 +182,6 @@ function clearDisplay(){
     firstOperator = null;
     secondOperator = null;
     result = null;
-}
-
-function inputPercent(num){
-    displayValue = (num/100);
 }
 
 function roundAccurately(num, places) {

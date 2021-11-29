@@ -48,6 +48,10 @@ button {
   width: 100%;
 }
 
+.back {
+  grid-column: 2/4;
+}
+
 .zero {
   grid-column: 1 / 3;
 }
